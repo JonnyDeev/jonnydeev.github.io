@@ -114,7 +114,7 @@ const reset = () => {
     cards[index].classList.remove("toggleCard");
     setTimeout(() => {
       cards[index].style.pointerEvents = "all";
-      faces[index].src = item.imgSrc;
+      face[index].src = item.imgSrc;
       cards[index].setAttribute("name", item.name);
       section.style.pointerEvents = "all";
     }, 1000);
