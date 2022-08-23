@@ -6,6 +6,7 @@
   }
   
   body {
+    position: relative;
     font-family: "Montserrat", sans-serif;
     display: flex;
     flex-direction: column;
@@ -25,7 +26,9 @@
     background-attachment: fixed;
     color: #eee;
   }
-  
+  header {
+    margin: 1rem 0;
+  }
   section {
     display: grid;
     grid-template-columns: repeat(4, 8rem);
@@ -33,6 +36,7 @@
     gap: 2rem;
     margin: 3rem 0;
     perspective: 800px;
+    padding: 2px ;
   }
 
   
@@ -63,6 +67,35 @@
     transform: rotateY(180deg);
   }
   
+  .do-damage {
+    animation: damage 1.5s normal forwards;
+  }
+
+  @keyframes damage {
+    from {
+      box-shadow: rgb(245, 54, 54) 0px 0px 15px;
+    }
+    to {
+      box-shadow: none
+    }
+  }
+
+
+
+  .heal {
+    animation: healing 1.5s normal forwards;
+  }
+
+  @keyframes healing {
+    from {
+      box-shadow: rgba(148, 58, 180, 1) 0px 0px 15px;
+    }
+    to {
+      box-shadow: none
+    }
+  }
+  
+
   /* mobile devices */
   
 @media screen and (max-width: 500px) {

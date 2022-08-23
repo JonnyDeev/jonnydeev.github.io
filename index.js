@@ -5,6 +5,7 @@ const lives = document.querySelector(".livesLeft");
 let playerLives = 6;
 const btn = document.querySelector("button");
 
+
 lives.textContent = playerLives;
 
 //data
@@ -84,11 +85,13 @@ const checkCards = (e) => {
       flippedCard[1].getAttribute("name")
     ) {
       console.log("correct");
+      heal();
       flippedCard.forEach((card) => {
         card.classList.remove("flipped");
         card.style.pointerEvents = "none";
       });
     } else {
+      domTakeDamage()
       console.log("incorrect");
       flippedCard.forEach((card) => {
         card.classList.remove("flipped");
@@ -99,7 +102,8 @@ const checkCards = (e) => {
       playerLives--;
       lives.textContent = playerLives;
       if (playerLives === 0) {
-        window.alert("Game Over! Press Ok to continue");
+        section.classList.remove("do-damage");
+        alert("Game Over! Press Ok to continue");
         reset();
       }
     }
@@ -130,3 +134,18 @@ generateCards();
 btn.addEventListener("click", () => {
   reset();
 });
+
+
+function domTakeDamage() {
+  section.classList.add("do-damage");
+  setTimeout(() => {
+    section.classList.remove("do-damage");
+  }, 1000);
+}
+
+function heal() {
+  section.classList.add("heal");
+  setTimeout(() => {
+	section.classList.remove("heal");
+}, 1000);
+}
