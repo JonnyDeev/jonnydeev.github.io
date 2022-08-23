@@ -109,12 +109,14 @@ const reset = () => {
   let cardData = randomize();
   let face = document.querySelectorAll(".face");
   let cards = document.querySelectorAll(".card");
+  section.style.pointerEvents = "none";
   cardData.forEach((item, index) => {
     cards[index].classList.remove("toggleCard");
     setTimeout(() => {
       cards[index].style.pointerEvents = "all";
       faces[index].src = item.imgSrc;
       cards[index].setAttribute("name", item.name);
+      section.style.pointerEvents = "all";
     }, 1000);
   });
   playerLives = 6;
