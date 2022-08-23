@@ -75,6 +75,7 @@ const checkCards = (e) => {
   const clickedCard = e.target;
   clickedCard.classList.add("flipped");
   const flippedCard = document.querySelectorAll(".flipped");
+  const toggleCard = document.querySelectorAll(".toggleCard");
   console.log(clickedCard);
   //logic
   if (flippedCard.length === 2) {
