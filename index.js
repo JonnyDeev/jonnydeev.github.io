@@ -2,7 +2,7 @@
 
 const section = document.querySelector("section");
 const lives = document.querySelector(".livesLeft");
-let playerLives = 6;
+let playerLives = 8;
 const btn = document.querySelector("button");
 
 
@@ -127,7 +127,7 @@ const reset = () => {
       section.style.pointerEvents = "all";
     }, 1000);
   });
-  playerLives = 6;
+  playerLives = 8;
   lives.textContent = playerLives;
 };
 generateCards();
