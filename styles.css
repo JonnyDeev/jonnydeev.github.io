@@ -112,4 +112,33 @@
     margin: 3rem 0;
     perspective: 800px;
   }
+
+  
+  .do-damage {
+    animation: damage 1.5s normal forwards;
+  }
+
+  @keyframes damage {
+    from {
+      box-shadow: rgb(245, 54, 54) 0px 0px 15px;
+    }
+    to {
+      box-shadow: none
+    }
+  }
+
+
+
+  .heal {
+    animation: healing 1.5s normal forwards;
+  }
+
+  @keyframes healing {
+    from {
+      box-shadow: rgba(148, 58, 180, 1) 0px 0px 15px;
+    }
+    to {
+      box-shadow: none
+    }
+  }
 }
