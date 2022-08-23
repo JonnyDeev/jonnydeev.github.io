@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgb(4, 3, 3);
+  background: linear-gradient(
+    180deg,
+    rgba(4, 3, 3, 1) 5%,
+    rgba(53, 22, 63, 1) 42%,
+    rgba(85, 34, 103, 1) 67%,
+    rgba(126, 50, 153, 1) 86%,
+    rgba(148, 58, 180, 1) 98%
+  );
+  background-attachment: fixed;
+  color: #eee;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(4, 8rem);
+  grid-template-rows: repeat(4, 8rem);
+  gap: 2rem;
+  margin: 3rem 0;
+  perspective: 800px;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px;
+}
+
+.face,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+}
+
+.back {
+  background: #eee;
+  backface-visibility: hidden;
+}
+
+.toggleCard {
+    transform: rotateY(180deg);
+}
