@@ -103,19 +103,22 @@ const checkCards = (e) => {
       }
     }
   }
+  if (toggleCard.length === 16) { 
+    alert("Congratulations! You have successfully completed the Game")
+  }
 };
 
 const reset = () => {
   let cardData = randomize();
   let face = document.querySelectorAll(".face");
-  let cards = document.querySelectorAll(".card");
+  let card = document.querySelectorAll(".card");
   section.style.pointerEvents = "none";
   cardData.forEach((item, index) => {
-    cards[index].classList.remove("toggleCard");
+    card[index].classList.remove("toggleCard");
     setTimeout(() => {
-      cards[index].style.pointerEvents = "all";
+      card[index].style.pointerEvents = "all";
       face[index].src = item.imgSrc;
-      cards[index].setAttribute("name", item.name);
+      card[index].setAttribute("name", item.name);
       section.style.pointerEvents = "all";
     }, 1000);
   });
