@@ -62,7 +62,7 @@ contact_btn.addEventListener('click', () => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
-    const res = await fetch('/contact', {
+    const res = await fetch('https://jerca-backend.onrender.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
